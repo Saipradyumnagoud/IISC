@@ -11,13 +11,11 @@ def process_image(image_data):
     nparr = np.frombuffer(base64.b64decode(image_data.split(',')[1]), np.uint8)
     # Decode image
     image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-    # Perform object detection
-    # Implement object detection logic here using OpenCV or other libraries
-    # For example, you can use pre-trained models like YOLO or SSD
-    # Once objects are detected, draw bounding boxes or perform desired actions
-    processed_image = image  # For demonstration purposes, returning the original image
+    # Perform object detection using OpenCV
+    # Example: Convert image to grayscale
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     # Convert processed image to base64 string
-    retval, buffer = cv2.imencode('.jpg', processed_image)
+    retval, buffer = cv2.imencode('.jpg', gray_image)
     processed_image_data = base64.b64encode(buffer).decode('utf-8')
     return processed_image_data
 
