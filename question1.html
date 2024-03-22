@@ -4,36 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Processing Web App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        nav {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-        }
-        nav h1 {
-            margin: 0;
-        }
-        form {
-            margin: 20px;
-            text-align: center;
-        }
-        #image-container {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px;
-        }
-        #image-container img {
-            max-width: 45%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-    </style>
+    
+    <link rel="stylesheet" href="question1css.css" />
 </head>
 <body>
     <nav>
@@ -46,11 +18,11 @@
     <div id="image-container">
         <div id="original-image">
             <h2>Original Image</h2>
-            <img id="original-img" src="" alt="Original Image">
+            <img id="original-img" src="before processing.png" alt="Original Image">
         </div>
         <div id="processed-image">
             <h2>Processed Image</h2>
-            <img id="processed-img" src="" alt="Processed Image">
+            <img id="processed-img" src="after processing.png" alt="Processed Image">
         </div>
     </div>
 
@@ -61,21 +33,6 @@
             var fileInput = document.getElementById('image-input');
             formData.append('image', fileInput.files[0]);
             
-            // Example: Send formData to backend for processing (you'll need to implement this part)
-            // You can use fetch API or XMLHttpRequest to send the form data to the backend
-            // Example using fetch API:
-            // fetch('/upload', {
-            //     method: 'POST',
-            //     body: formData
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     document.getElementById('original-img').src = data.originalImageUrl;
-            //     document.getElementById('processed-img').src = data.processedImageUrl;
-            // })
-            // .catch(error => console.error('Error:', error));
-            
-            // Example: Set source for images (replace with actual URLs from backend response)
             document.getElementById('original-img').src = 'placeholder.jpg'; // Replace with actual URL
             document.getElementById('processed-img').src = 'placeholder_processed.jpg'; // Replace with actual URL
         });
