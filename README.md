@@ -5,7 +5,7 @@ This web application allows users to upload transportation-related images and pe
 ## Setup and Installation
 
 1. Clone the repository:
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/Saipradyumnagoud/IISC.git
 
 
 2. Navigate to the project directory:
