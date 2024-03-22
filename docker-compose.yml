@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+  backend:
+    image: "your-flask-backend-image-name"
+    ports:
+      - "5000:5000"
