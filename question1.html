@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav>
-        <h1>Image Processing Web App</h1>
+        <h1 style="text-align: center;">Image Processing Web App</h1>
     </nav>
     <form id="upload-form" enctype="multipart/form-data">
         <input type="file" id="image-input" accept="image/*" required>
@@ -33,8 +33,8 @@
             var fileInput = document.getElementById('image-input');
             formData.append('image', fileInput.files[0]);
             
-            document.getElementById('original-img').src = 'placeholder.jpg'; // Replace with actual URL
-            document.getElementById('processed-img').src = 'placeholder_processed.jpg'; // Replace with actual URL
+            document.getElementById('original-img').src = 'placeholder.jpg'; // Here we should Replace with actual URL
+            document.getElementById('processed-img').src = 'placeholder_processed.jpg'; // Here we should Replace with actual URL
         });
     </script>
 </body>
