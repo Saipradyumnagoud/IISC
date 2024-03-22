@@ -18,23 +18,31 @@
     <div id="image-container">
         <div id="original-image">
             <h2>Original Image</h2>
-            <img id="original-img" src="before processing.png" alt="Original Image">
+            <img id="original-img" src="" alt="Original Image">
         </div>
         <div id="processed-image">
             <h2>Processed Image</h2>
-            <img id="processed-img" src="after processing.png" alt="Processed Image">
+            <img id="processed-img" src="" alt="Processed Image">
         </div>
     </div>
 
     <script>
-        document.getElementById('upload-form').addEventListener('submit', function(event) {
+        document.getElementById('upload-form').addEventListener('submit', async function(event) {
             event.preventDefault();
             var formData = new FormData();
             var fileInput = document.getElementById('image-input');
             formData.append('image', fileInput.files[0]);
             
-            document.getElementById('original-img').src = 'placeholder.jpg'; // Here we should Replace with actual URL
-            document.getElementById('processed-img').src = 'placeholder_processed.jpg'; // Here we should Replace with actual URL
+            // Send image to backend for processing
+            const response = await fetch('/process-image', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await response.json();
+
+            // Set the src attribute of the original and processed images
+            document.getElementById('original-img').src = data.originalImageUrl;
+            document.getElementById('processed-img').src = data.processedImageUrl;
         });
     </script>
 </body>

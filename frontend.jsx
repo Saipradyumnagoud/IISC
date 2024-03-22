@@ -1,6 +1,6 @@
 // App.js
 import React, { useState } from 'react';
-import './App.css';
+import './question1css.css';
 
 function App() {
   const [originalImage, setOriginalImage] = useState(null);
